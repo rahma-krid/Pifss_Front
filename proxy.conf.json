@@ -1,0 +1,11 @@
+{
+    "/api": {
+      "target": "https://localhost:9991",
+      "secure": true,
+      "pathRewrite": {
+      "^/api": ""
+    },
+      "changeOrigin": true
+    }
+  }
+  

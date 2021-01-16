@@ -1,0 +1,91 @@
+
+    <div class="page-content--bge5">
+        <div class="container">
+            <div class="login-wrap">
+                <div class="card bg-dark">
+
+                <div class="login-content">
+                    <div class="login-logo">
+                        <div class="imgcontainer">
+                            <img src="assets/images/icon/mank.png" alt="Avatar" class="avatar">
+                        </div>
+                    </div>
+
+                    <div class="login-form">
+                        <form class="example-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+                            <div *ngIf="error" class="alert alert-danger mt-3 mb-0">invalid credetianals</div>
+                            
+                                <mat-form-field  class="example-full-width">
+
+                                    <mat-label>Customer ID Number</mat-label>
+                                    <input type="number" max="99999999" min="100000000" matInput formControlName="id" minlength = "3" required>
+                                   
+                                    <mat-error   *ngIf="loginForm.get('id').hasError('minlength') && !loginForm.get('id').hasError('required')">
+                                        Please enter a valid id
+                                      </mat-error>
+
+                                     <mat-error
+                                     *ngIf="loginForm.get('id').hasError('required')">
+                                     id is <strong>required</strong>
+                                     </mat-error>
+                                </mat-form-field>
+
+                                <br>
+                                                            <mat-form-field class="example-full-width">
+                                    <mat-label>Password</mat-label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                   
+                                   
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                
+                                    
+
+                                     <span class="fa fa-eye" (click)="change()"></span> 
+                                        <input matInput   formControlName="pass"   [type]="type" minlength="3"  required>
+                                      
+                                        <mat-error *ngIf="loginForm.get('pass').hasError('minLength') && !loginForm.get('pass').hasError('required')">
+                                            Please enter a valid email address
+                                          </mat-error>
+                                   
+                                          
+                                        <mat-error
+                                     *ngIf="loginForm.get('pass').hasError('required')">
+                                     id is <strong>required</strong>
+                                     </mat-error>
+
+                                    </mat-form-field>
+                                
+                                <br>
+                                <br>
+                               
+                            <button [disabled]="loading" class="au-btn au-btn--block au-btn--green m-b-40">
+                                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                                Login
+                            </button>
+                                                   
+                        </form>
+                   <br>
+                        <div class="register-link">
+                            <p>
+                                Don't you have account?
+                                <a href="" [routerLink]="['/signup']" >
+
+                                  <p><strong> Sign Up Here </strong></p> </a>
+
+                            </p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+   

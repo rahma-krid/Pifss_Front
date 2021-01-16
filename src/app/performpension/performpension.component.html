@@ -1,0 +1,125 @@
+
+<div class="container">
+    <div class="row">
+        
+        <div class="col-lg-2">
+        </div>
+
+<div class="col-lg-8">
+    <div class="card">
+
+        <div class="card-header user-header alt bg-dark" style="width:770px; height:100px;">
+            <div class="media">
+                <a href="#">
+                    <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;" alt="" src="assets/images/money.jpg">
+                </a>
+                <div class="media-body">
+                    <br>
+                 
+
+                    <h2 class="text-light display-20">   
+                        Perform Advanced Pension </h2>
+                    <br>
+                
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="card-body">
+           
+
+
+            <form class="example-form" [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+
+                <br>
+                <br>
+
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="cc-payment" class="control-label mb-1">Total pension</label>
+                            <input id="cc-pament" name="cc-payment"  type="text" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="customersalary.totalPension" disabled>
+                        </div>
+                        <br>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group has-success">
+                            <label for="cc-name" class="control-label mb-1">Pension Authority</label>
+                            <input  class="form-control cc-name valid"  [ngModelOptions]="{standalone: true}" [(ngModel)]="customersalary.pensionAuthority"
+                            disabled>
+                            <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+
+                   
+                    
+                    <div class="form-group">
+                        <label for="cc-number" class="control-label mb-1">Deductions Amount</label>
+                        <input id="cc-number"  class="form-control cc-name valid" name="cc-number"   [ngModelOptions]="{standalone: true}" [(ngModel)]="customersalary.deductionsAmount"
+                          disabled>
+                        <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="cc-exp" class="control-label mb-1">Net Pension</label>
+                                <input id="cc-exp" name="cc-exp" type="tel" class="form-control cc-exp"
+                                [ngModelOptions]="{standalone: true}" [(ngModel)]="customersalary.netPension" disabled>
+                                <span class="help-block" data-valmsg-for="cc-exp" data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label for="x_card_code" class="control-label mb-1">Iban Number</label>
+                            <div class="input-group">
+                                <input id="x_card_code" name="x_card_code" type="tel" class="form-control cc-cvc"
+                                [ngModelOptions]="{standalone: true}" [(ngModel)]="customersalary.ibanNumber"
+                                disabled>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cc-number" class="control-label mb-1">Number of months</label>
+                        <select name="multiple-select" id="multiple-select"  class="form-control" formControlName="numberOfMonthTobeSpent" >
+                            <option value="1">1 mois</option>
+                            <option value="2">2 mois</option>
+                          
+                        </select>
+                     
+                    </div>
+
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div>
+
+                        <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
+                            <i class="fa fa-lock fa-lg"></i>&nbsp;
+                            <span id="payment-button-amount">Send</span>
+                            <span id="payment-button-sending" style="display:none;">Sending…</span>
+                        </button>
+                    </div>
+                
+
+               
+
+              
+              
+            
+
+             
+            </form>
+        </div>
+    </div>
+</div>
+<div class="col-lg-3">
+</div>
+</div>
+</div>

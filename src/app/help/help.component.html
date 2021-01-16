@@ -1,0 +1,68 @@
+
+    <div class="page-content--bge5">
+        <div class="container">
+            <div class="login-wrap">
+                <div class="login-content">
+                    <div class="login-logo">
+                        <a href="#">
+                            <img class="blocktext" src="assets/images/pifsss.png" alt="Pifss" />
+                        </a>
+                    </div>
+                    <div class="login-form">
+                        <form [formGroup]="helpForm" (ngSubmit)="send()">
+
+                          
+                            <mat-form-field  class="example-full-width">
+
+                                <mat-label>Email</mat-label>
+                                <input  type="email" [(ngModel)]="help.email" matInput formControlName="email" >
+                               
+                                <mat-error   *ngIf="helpForm.get('email').hasError('email') && !helpForm.get('email').hasError('required')">
+                                    Please enter a valid email
+                                  </mat-error>
+
+                                 <mat-error
+                                 *ngIf="helpForm.get('email').hasError('required')">
+                                 email is <strong>required</strong>
+                                 </mat-error>
+
+                            </mat-form-field>
+
+
+                         
+                            <mat-form-field  class="example-full-width">
+
+                                <mat-label>Mobile</mat-label>
+                                <input  matInput [(ngModel)]="help.mobile" formControlName="mobile">
+                               
+
+                                 <mat-error
+                                 *ngIf="helpForm.get('mobile').hasError('required')">
+                                 mobile is <strong>required</strong>
+                                 </mat-error>
+                            </mat-form-field>
+
+
+
+                            <mat-form-field  class="example-full-width">
+
+                                <mat-label>Subject</mat-label>
+                                <textarea rows="4" cols="50" [(ngModel)]="help.subject" matInput formControlName="subject">
+                               </textarea>
+
+                                 <mat-error
+                                 *ngIf="helpForm.get('subject').hasError('required')">
+                                 subject is <strong>required</strong>
+                                 </mat-error>
+                            </mat-form-field>
+
+                            <button class="au-btn au-btn--block au-btn--blue m-b-20" type="submit">Send </button>
+                           
+                        </form>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
